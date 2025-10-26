@@ -1,5 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "pnpm install && pnpm -C client build",
-  "outputDirectory": "client/dist"
+  "buildCommand": "pnpm install && pnpm build",
+  "outputDirectory": "dist"
 }
