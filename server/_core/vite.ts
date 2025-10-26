@@ -49,7 +49,8 @@ export async function setupVite(app: Express, server: Server) {
 
 export function serveStatic(app: Express) {
   // prefer project root dist when available (vite outputs to dist/), fall back to server/public
-  const rootDistPublic = path.resolve(import.meta.dirname, "../..", "dist");
+  // use process.cwd() so the server serves the dist directory relative to where node was started
+  const rootDistPublic = path.resolve(process.cwd(), "dist");
   const serverPublic = path.resolve(import.meta.dirname, "public");
 
   let distPath = rootDistPublic;
